@@ -104,7 +104,8 @@ import epsilon from '@/images/epsilon.jpg';
 
   .at-a-glance {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(18ch, 1fr));
     gap: 2rem;
     padding: 0;
     list-style: none;
@@ -115,8 +116,8 @@ import epsilon from '@/images/epsilon.jpg';
       gap: 0.5em;
       border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      background: #23262d;
       padding: 1rem 1.5rem;
+      background: #23262d;
       /* background: linear-gradient(to top left, #23262d, hsl(222, 13%, 22%)); */
       /* box-shadow: 0.5rem 0.5rem 0 rgba(var(--accent), 0.1);
       transition: all .2s; */
