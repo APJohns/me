@@ -52,12 +52,15 @@ const pathname = new URL(Astro.request.url).pathname;
     --light: 241, 247, 255;
     --dark: 4, 2, 8;
 
+    --background: #13151a;
+    --background-subtle: #23262d;
+
     --fs-body: 1.125rem;
     --fs-subtle: 1rem;
   }
   html {
     font-family: system-ui, sans-serif;
-    background: #13151a;
+    background: var(--background);
     color: rgb(var(--light));
     font-size: var(--fs-body);
   }

@@ -1,10 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '@/layouts/Layout.astro';
-import me from '@/images/me.png';
-import luna from '@/images/luna.png';
-import space from '@/images/space.jpg';
-import plane from '@/images/plane.jpeg';
+import me from '@/images/me.jpeg';
 ---
 
 <Layout title="Ash Johns | About">
@@ -13,12 +10,6 @@ import plane from '@/images/plane.jpeg';
     <div class="image">
       <Image src={me} alt="A picture of me" class="me" />
     </div>
-    <!-- <div class="gallery">
-      <Image src={me} alt="A picture of me" class="me" />
-      <Image src={luna} alt="A picture of my cat" class="me" />
-      <Image src={space} alt="Pictures I took of the Moon, Jupiter, and Saturn" class="me" />
-      <Image src={plane} alt="Pictures I took of the Moon, Jupiter, and Saturn" class="me" />
-    </div> -->
     <p class="about-text">
       Hi! I'm Ash. I'm a Boston based Frontend Developer. My latest focus has been on building out design systems from
       the ground up. That includes everything from developing React components, to setting up CI/CD and everything
@@ -33,11 +24,10 @@ import plane from '@/images/plane.jpeg';
   .about {
     display: grid;
     grid-template-columns: 1fr;
-    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
     align-items: center;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background: #23262d;
+    background: var(--background-subtle);
 
     & p {
       margin: 0;
@@ -65,7 +55,7 @@ import plane from '@/images/plane.jpeg';
     aspect-ratio: 1/1;
     object-fit: cover;
     object-position: center;
-    /* border: 8px solid #13151a; */
+    /* border: 8px solid var(--background); */
     border-radius: 8px 8px 0 0;
     /* padding: 1.5rem; */
   }
@@ -109,7 +99,7 @@ import plane from '@/images/plane.jpeg';
       aspect-ratio: 1/1;
       object-fit: cover;
       object-position: center;
-      border: 8px solid #13151a;
+      border: 8px solid var(--background);
       border-radius: 50%;
     }
   }
