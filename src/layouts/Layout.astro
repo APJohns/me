@@ -1,6 +1,6 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -10,72 +10,98 @@ const pathname = new URL(Astro.request.url).pathname;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
     <header>
       <nav class="primary-nav">
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="/" class={`nav-link${pathname ===  '/' ? ' active' : ''}`}>Home</a>
+            <a href="/" class={`nav-link${pathname === '/' ? ' active' : ''}`}>Home</a>
           </li>
           <li class="nav-item">
-            <a href="/about" class={`nav-link${pathname ===  '/about' ? ' active' : ''}`}>About</a>
+            <a href="/about" class={`nav-link${pathname === '/about' ? ' active' : ''}`}>About</a>
           </li>
           <li class="nav-item">
             <a href="/resume.pdf" class="nav-link">Resume</a>
           </li>
           <li class="nav-item">
-            <a href="/contact" class={`nav-link${pathname ===  '/contact' ? ' active' : ''}`}>Contact</a>
+            <a href="/contact" class={`nav-link${pathname === '/contact' ? ' active' : ''}`}>Contact</a>
           </li>
         </ul>
       </nav>
     </header>
-		<slot />
-	</body>
+    <main>
+      <slot />
+    </main>
+  </body>
 </html>
 
 <style is:global>
-	:root {
-		--accent: 255, 147, 47;
-		--accent-light: 255, 123, 0;
-		--accent-dark: 13, 40, 76;
-		--accent-gradient: linear-gradient(
-      45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-      );
-      --light: 241, 247, 255;
-      --dark: 4, 2, 8;
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
+  :root {
+    --accent: 255, 147, 47;
+    --accent-light: 255, 123, 0;
+    --accent-dark: 13, 40, 76;
+    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+    --light: 241, 247, 255;
+    --dark: 4, 2, 8;
+
+    --fs-body: 1.125rem;
+    --fs-subtle: 1rem;
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background: #13151a;
+    color: rgb(var(--light));
+    font-size: var(--fs-body);
+  }
+
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
 
   p {
     line-height: 1.5;
   }
 
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
     color: var(--dark);
-	}
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+
   .primary-nav {
     text-align: center;
   }
@@ -105,8 +131,9 @@ const pathname = new URL(Astro.request.url).pathname;
     display: block;
     border-radius: 1rem;
     padding: 0.25rem 0.75rem;
-    color: black;
+    color: rgb(var(--dark));
     text-decoration: none;
+    font-size: var(--fs-subtle);
 
     &:not(.active):hover {
       text-decoration: underline;
@@ -115,7 +142,7 @@ const pathname = new URL(Astro.request.url).pathname;
     }
 
     &.active {
-      color: white;
+      color: rgb(var(--light));
       background: rgb(var(--accent-dark));
     }
   }

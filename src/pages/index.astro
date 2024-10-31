@@ -1,106 +1,72 @@
 ---
-import { Image } from 'astro:assets'
+import { Image } from 'astro:assets';
 import Layout from '@/layouts/Layout.astro';
 import Card from '@/components/Card.astro';
 import logo from '@/images/logo.png';
+import greenerWeb from '@/images/greener-web.png';
 import anatomy from '@/images/anatomy.jpg';
 import epsilon from '@/images/epsilon.jpg';
 ---
 
 <Layout title="Ash Johns | Portfolio">
-	<main>
-		<h1>Welcome to my <span class="text-gradient">portfolio</span></h1>
-    <ul class="at-a-glance">
-      <li>
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
-        </svg>
-        Full Stack
-      </li>
-      <li>
-        <div class="avatar">
-          <Image src={logo} alt="logo" class="logo" />
-          <div class="status" />
-        </div>
-        Open for work</li>
-      <li>
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-          <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM6.262 6.072a8.25 8.25 0 1 0 10.562-.766 4.5 4.5 0 0 1-1.318 1.357L14.25 7.5l.165.33a.809.809 0 0 1-1.086 1.085l-.604-.302a1.125 1.125 0 0 0-1.298.21l-.132.131c-.439.44-.439 1.152 0 1.591l.296.296c.256.257.622.374.98.314l1.17-.195c.323-.054.654.036.905.245l1.33 1.108c.32.267.46.694.358 1.1a8.7 8.7 0 0 1-2.288 4.04l-.723.724a1.125 1.125 0 0 1-1.298.21l-.153-.076a1.125 1.125 0 0 1-.622-1.006v-1.089c0-.298-.119-.585-.33-.796l-1.347-1.347a1.125 1.125 0 0 1-.21-1.298L9.75 12l-1.64-1.64a6 6 0 0 1-1.676-3.257l-.172-1.03Z" clip-rule="evenodd" />
-        </svg>
-        Boston, MA
-      </li>
-    </ul>
-		<ul role="list" class="link-card-grid">
-      <Card
-        href="/greener-web"
-        title="Greener Web"
-        body="Web sustainabiltiy tool and dashboard"
-        image={anatomy}
-      />
-			<Card
-				href="/anatomy"
-				title="Anatomy"
-				body="Boston Scientific's design system and component library"
-        image={anatomy}
-			/>
-			<Card
-				href="/blueprint"
-				title="Blueprint"
-				body="Epsilon's design system and component library"
-        image={epsilon}
-			/>
-			<Card
-				href="/blog-portfolio"
-				title="Blog & Portfolio"
-				body="Place to share my ideas and projects"
-        image={logo}
-			/>
-		</ul>
-	</main>
+  <h1>Welcome to my <span class="text-gradient">portfolio</span></h1>
+  <ul class="at-a-glance">
+    <li>
+      <svg
+        class="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"
+        ></path>
+      </svg>
+      Full Stack
+    </li>
+    <li>
+      <div class="avatar">
+        <Image src={logo} alt="logo" class="logo" />
+        <div class="status"></div>
+      </div>
+      Open for work
+    </li>
+    <li>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+        <path
+          fill-rule="evenodd"
+          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM6.262 6.072a8.25 8.25 0 1 0 10.562-.766 4.5 4.5 0 0 1-1.318 1.357L14.25 7.5l.165.33a.809.809 0 0 1-1.086 1.085l-.604-.302a1.125 1.125 0 0 0-1.298.21l-.132.131c-.439.44-.439 1.152 0 1.591l.296.296c.256.257.622.374.98.314l1.17-.195c.323-.054.654.036.905.245l1.33 1.108c.32.267.46.694.358 1.1a8.7 8.7 0 0 1-2.288 4.04l-.723.724a1.125 1.125 0 0 1-1.298.21l-.153-.076a1.125 1.125 0 0 1-.622-1.006v-1.089c0-.298-.119-.585-.33-.796l-1.347-1.347a1.125 1.125 0 0 1-.21-1.298L9.75 12l-1.64-1.64a6 6 0 0 1-1.676-3.257l-.172-1.03Z"
+          clip-rule="evenodd"></path>
+      </svg>
+      Boston, MA
+    </li>
+  </ul>
+  <ul role="list" class="link-card-grid">
+    <Card href="/greener-web" title="Greener Web" body="Web sustainabiltiy tool and dashboard" image={greenerWeb} />
+    <Card
+      href="/anatomy"
+      title="Anatomy"
+      body="Boston Scientific's design system and component library"
+      image={anatomy}
+    />
+    <Card href="/blueprint" title="Blueprint" body="Epsilon's design system and component library" image={epsilon} />
+    <Card href="/blog-portfolio" title="Blog & Portfolio" body="Place to share my ideas and projects" image={logo} />
+  </ul>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(26ch, 1fr));
-		gap: 2rem;
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26ch, 1fr));
+    gap: 2rem;
     margin-top: 4rem;
-		padding: 0;
-	}
+    padding: 0;
+  }
 
   .at-a-glance {
     display: grid;
@@ -146,7 +112,7 @@ import epsilon from '@/images/epsilon.jpg';
   }
 
   .avatar {
-    position:relative;
+    position: relative;
 
     &::before {
       content: '';
