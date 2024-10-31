@@ -4,6 +4,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const pathname = new URL(Astro.request.url).pathname;
 ---
 
 <!doctype html>
@@ -12,25 +14,46 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
+    <header>
+      <nav class="primary-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="/" class={`nav-link${pathname ===  '/' ? ' active' : ''}`}>Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/about" class={`nav-link${pathname ===  '/about' ? ' active' : ''}`}>About</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resume.pdf" class="nav-link">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a href="/contact" class={`nav-link${pathname ===  '/contact' ? ' active' : ''}`}>Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
+		--accent: 255, 147, 47;
+		--accent-light: 255, 123, 0;
+		--accent-dark: 13, 40, 76;
 		--accent-gradient: linear-gradient(
-			45deg,
+      45deg,
 			rgb(var(--accent)),
 			rgb(var(--accent-light)) 30%,
 			white 60%
-		);
+      );
+      --light: 241, 247, 255;
+      --dark: 4, 2, 8;
 	}
 	html {
 		font-family: system-ui, sans-serif;
@@ -46,5 +69,50 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
+    color: var(--dark);
 	}
+
+  .primary-nav {
+    text-align: center;
+  }
+
+  .nav-list {
+    display: inline-flex;
+    gap: 0.5rem;
+    border-radius: calc(1rem + 4px);
+    padding: 4px;
+    list-style: none;
+    background: rgb(var(--light));
+
+    /* --- Neon border --- */
+    /* border: .1rem solid #fff;
+    box-shadow: 0 0 .1rem #fff,
+              0 0 .1rem #fff,
+              0 0 1rem #bc13fe,
+              0 0 0.4rem #bc13fe,
+              0 0 1.4rem #bc13fe,
+              inset 0 0 0.5rem #bc13fe; */
+  }
+
+  .nav-item {
+  }
+
+  .nav-link {
+    display: block;
+    border-radius: 1rem;
+    padding: 0.25rem 0.75rem;
+    color: black;
+    text-decoration: none;
+
+    &:not(.active):hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-color: rgba(var(--accent-dark));
+    }
+
+    &.active {
+      color: white;
+      background: rgb(var(--accent-dark));
+    }
+  }
 </style>
