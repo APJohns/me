@@ -6,6 +6,10 @@ interface Props {
 const { title } = Astro.props;
 
 const pathname = new URL(Astro.request.url).pathname;
+let activePath = pathname;
+if (pathname.length > 1 && pathname.at(-1) === '/') {
+  activePath = pathname.slice(0, -1);
+}
 ---
 
 <!doctype html>
@@ -23,16 +27,16 @@ const pathname = new URL(Astro.request.url).pathname;
       <nav class="primary-nav">
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="/" class={`nav-link${pathname === '/' ? ' active' : ''}`}>Home</a>
+            <a href="/" class={`nav-link${activePath === '/' ? ' active' : ''}`}>Home</a>
           </li>
           <li class="nav-item">
-            <a href="/about" class={`nav-link${pathname === '/about' ? ' active' : ''}`}>About</a>
+            <a href="/about" class={`nav-link${activePath === '/about' ? ' active' : ''}`}>About</a>
           </li>
           <li class="nav-item">
             <a href="/resume.pdf" class="nav-link">Resume</a>
           </li>
           <li class="nav-item">
-            <a href="/contact" class={`nav-link${pathname === '/contact' ? ' active' : ''}`}>Contact</a>
+            <a href="/contact" class={`nav-link${activePath === '/contact' ? ' active' : ''}`}>Contact</a>
           </li>
         </ul>
       </nav>
