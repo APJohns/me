@@ -27,7 +27,7 @@ const { href, title, body, image } = Astro.props;
     list-style: none;
     display: flex;
     padding: 1px;
-    background-color: var(--background-subtle);
+    background-color: rgb(var(--background-subtle));
     background-image: none;
     background-size: 400%;
     border-radius: 8px;
@@ -45,8 +45,8 @@ const { href, title, body, image } = Astro.props;
     line-height: 1.4;
     padding: calc(1.5rem - 1px);
     border-radius: 8px;
-    color: var(--light);
-    background-color: var(--background-subtle);
+    color: var(--foreground);
+    background-color: rgb(var(--background-subtle));
   }
 
   .thumbnail {

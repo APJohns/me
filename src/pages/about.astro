@@ -20,14 +20,14 @@ import me from '@/images/me.jpeg';
   </div>
 </Layout>
 
-<style define:vars={{image: `url("${me.src}")`}}>
+<style define:vars={{ image: `url("${me.src}")` }}>
   .about {
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background: var(--background-subtle);
+    background: rgb(var(--background-subtle));
 
     & p {
       margin: 0;
@@ -43,7 +43,7 @@ import me from '@/images/me.jpeg';
 
   .image {
     display: flex;
-    align-self:stretch;
+    align-self: stretch;
   }
 
   .me {
@@ -97,7 +97,7 @@ import me from '@/images/me.jpeg';
       aspect-ratio: 1/1;
       object-fit: cover;
       object-position: center;
-      border: 8px solid var(--background);
+      border: 8px solid rgb(var(--background));
       border-radius: 50%;
     }
   }
