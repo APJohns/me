@@ -4,9 +4,7 @@ import { getCollection } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
 import Card from '@/components/Card.astro';
 import logo from '@/images/logo.png';
-import greenerWeb from '@/images/greener-web.png';
-import anatomy from '@/images/anatomy.jpg';
-import epsilon from '@/images/epsilon.jpg';
+import Socials from '@/components/Socials.astro';
 
 const allProjects = (await getCollection('projects')).sort((a, b) => b.data.sortOrder - a.data.sortOrder);
 console.log(allProjects);
@@ -62,6 +60,7 @@ console.log(allProjects);
       ))
     }
   </ul>
+  <Socials />
 </Layout>
 
 <style>
@@ -69,7 +68,7 @@ console.log(allProjects);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(26ch, 1fr));
     gap: 2rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
     padding: 0;
   }
 
