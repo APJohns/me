@@ -1,11 +1,15 @@
 ---
 import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
 import Card from '@/components/Card.astro';
 import logo from '@/images/logo.png';
 import greenerWeb from '@/images/greener-web.png';
 import anatomy from '@/images/anatomy.jpg';
 import epsilon from '@/images/epsilon.jpg';
+
+const allProjects = (await getCollection('projects')).sort((a, b) => b.data.sortOrder - a.data.sortOrder);
+console.log(allProjects);
 ---
 
 <Layout title="Ash Johns | Portfolio">
@@ -47,15 +51,16 @@ import epsilon from '@/images/epsilon.jpg';
     </li>
   </ul>
   <ul role="list" class="link-card-grid">
-    <Card href="/greener-web" title="Greener Web" body="Web sustainabiltiy tool and dashboard" image={greenerWeb} />
-    <Card
-      href="/anatomy"
-      title="Anatomy"
-      body="Boston Scientific's design system and component library"
-      image={anatomy}
-    />
-    <Card href="/blueprint" title="Blueprint" body="Epsilon's design system and component library" image={epsilon} />
-    <Card href="/blog-portfolio" title="Blog & Portfolio" body="Place to share my ideas and projects" image={logo} />
+    {
+      allProjects.map((project) => (
+        <Card
+          href={`projects/${project.slug}`}
+          title={project.data.title}
+          body={project.data.description}
+          image={project.data.image}
+        />
+      ))
+    }
   </ul>
 </Layout>
 
