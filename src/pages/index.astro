@@ -6,7 +6,9 @@ import Card from '@/components/Card.astro';
 import logo from '@/images/logo.png';
 import Socials from '@/components/Socials.astro';
 
-const allProjects = (await getCollection('projects')).sort((a, b) => b.data.sortOrder - a.data.sortOrder);
+const allProjects = (await getCollection('projects', ({ data }) => (import.meta.env.PROD ? !data.draft : true))).sort(
+  (a, b) => b.data.sortOrder - a.data.sortOrder
+);
 console.log(allProjects);
 ---
 
