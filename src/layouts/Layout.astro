@@ -1,4 +1,6 @@
 ---
+import Socials from '@/components/Socials.astro';
+
 interface Props {
   title: string;
 }
@@ -32,8 +34,8 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
   <body>
     <svg width="0" height="0">
       <filter id="blur-and-scale" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blurred"></feGaussianBlur>
-        <feColorMatrix type="saturate" in="blurred" values="2"></feColorMatrix>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blurred"></feGaussianBlur>
+        <feColorMatrix type="saturate" in="blurred" values="4"></feColorMatrix>
         <feComposite in="SourceGraphic" operator="over"></feComposite>
       </filter>
     </svg>
@@ -58,6 +60,9 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     <main>
       <slot />
     </main>
+    <footer>
+      <Socials />
+    </footer>
   </body>
 </html>
 
@@ -140,6 +145,10 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
   h1,
   p {
     line-height: 1.5;
+  }
+
+  a {
+    color: #2f88ef;
   }
 
   .blur {

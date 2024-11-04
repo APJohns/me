@@ -4,18 +4,37 @@ import { getCollection } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
 import Card from '@/components/Card.astro';
 import logo from '@/images/logo.png';
-import Socials from '@/components/Socials.astro';
+import earth from '@/images/earth.png';
 
 const allProjects = (await getCollection('projects', ({ data }) => (import.meta.env.PROD ? !data.draft : true))).sort(
   (a, b) => b.data.sortOrder - a.data.sortOrder
 );
 ---
 
+<script>
+  const timeEl = document.querySelector('#time');
+
+  function updateTime() {
+    const now = new Date().toLocaleTimeString(navigator.language, {
+      timeZone: 'America/New_York',
+      hour: 'numeric',
+      minute: 'numeric',
+      timeZoneName: 'short',
+    });
+    if (timeEl && now !== timeEl.textContent) {
+      timeEl.textContent = now;
+    }
+  }
+
+  updateTime();
+  setInterval(updateTime, 1000);
+</script>
+
 <Layout title="Ash Johns | Portfolio">
   <h1>Welcome to my <span class="text-gradient">portfolio</span></h1>
   <ul class="at-a-glance">
     <li>
-      <svg
+      <!-- <svg
         class="icon"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -29,8 +48,8 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
           stroke-linejoin="round"
           d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"
         ></path>
-      </svg>
-      Full Stack
+      </svg> -->
+      Frontend / Fullstack Developer
     </li>
     <li>
       <div class="avatar">
@@ -39,14 +58,12 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
       </div>
       Open for work
     </li>
-    <li>
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-        <path
-          fill-rule="evenodd"
-          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM6.262 6.072a8.25 8.25 0 1 0 10.562-.766 4.5 4.5 0 0 1-1.318 1.357L14.25 7.5l.165.33a.809.809 0 0 1-1.086 1.085l-.604-.302a1.125 1.125 0 0 0-1.298.21l-.132.131c-.439.44-.439 1.152 0 1.591l.296.296c.256.257.622.374.98.314l1.17-.195c.323-.054.654.036.905.245l1.33 1.108c.32.267.46.694.358 1.1a8.7 8.7 0 0 1-2.288 4.04l-.723.724a1.125 1.125 0 0 1-1.298.21l-.153-.076a1.125 1.125 0 0 1-.622-1.006v-1.089c0-.298-.119-.585-.33-.796l-1.347-1.347a1.125 1.125 0 0 1-.21-1.298L9.75 12l-1.64-1.64a6 6 0 0 1-1.676-3.257l-.172-1.03Z"
-          clip-rule="evenodd"></path>
-      </svg>
-      Boston, MA
+    <li class="time-li">
+      <Image src={earth} alt="" class="earth" />
+      <div class="time-card">
+        <div id="time" class="time"></div>
+        Boston, MA
+      </div>
     </li>
   </ul>
   <ul role="list" class="link-card-grid">
@@ -62,10 +79,9 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
       ))
     }
   </ul>
-  <Socials />
 </Layout>
 
-<style>
+<style define:vars={{ earth: `url("${earth.src}")` }}>
   .at-a-glance {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18ch, 1fr));
@@ -81,6 +97,23 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
       border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 1rem 1.5rem;
       background: rgba(var(--background-subtle), 0.25);
+    }
+
+    .time-li {
+      overflow: hidden;
+    }
+
+    .time {
+      font-family: var(--font-mono);
+      color: rgba(var(--foreground), 0.5);
+    }
+
+    .earth {
+      display: block;
+      width: 25%;
+      height: auto;
+      transform: scale(200%) translateX(-25%);
+      filter: drop-shadow(0 0 3px rgba(59, 112, 211, 0.5));
     }
   }
 
