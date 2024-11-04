@@ -22,7 +22,7 @@ const { Content } = await entry.render();
     <h1 class="title text-gradient">{entry.data.title}</h1>
     <p class="company">{entry.data.company}</p>
     <div class="tech-stack">
-      <span class="tech-stack-label">Powered by</span>
+      <!-- <span class="tech-stack-label">Powered by</span> -->
       <ul class="tech-list">
         {entry.data.techStack.map((tech) => <li>{tech}</li>)}
       </ul>
@@ -54,18 +54,21 @@ const { Content } = await entry.render();
     font-family: var(--font-mono);
   }
 
-  .tech-stack-label {
-    text-transform: uppercase;
-  }
-
   .tech-list {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
     margin: 0;
-    margin-top: 0.25rem;
+    margin-top: 0.5rem;
     padding: 0;
     list-style: none;
+
+    & li {
+      border-radius: 8px;
+      padding: 0.125rem 0.5rem;
+      background: rgb(var(--background-subtle));
+    }
   }
 
   .screenshot {
