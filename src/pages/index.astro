@@ -9,7 +9,6 @@ import Socials from '@/components/Socials.astro';
 const allProjects = (await getCollection('projects', ({ data }) => (import.meta.env.PROD ? !data.draft : true))).sort(
   (a, b) => b.data.sortOrder - a.data.sortOrder
 );
-console.log(allProjects);
 ---
 
 <Layout title="Ash Johns | Portfolio">
