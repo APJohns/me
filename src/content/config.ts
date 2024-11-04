@@ -7,11 +7,14 @@ const projectsCollection = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
+      company: z.string().optional(),
       techStack: z.array(z.string()),
       siteLink: z.string().optional(),
       codeLink: z.string().optional(),
-      image: image(),
+      thumbnail: image(),
+      screenshot: image(),
       sortOrder: z.number(),
+      draft: z.boolean().optional(),
     }),
 });
 // 3. Export a single `collections` object to register your collection(s)

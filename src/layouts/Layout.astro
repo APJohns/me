@@ -19,10 +19,24 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="https://use.typekit.net/akb2jka.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
+    <svg width="0" height="0">
+      <filter id="blur-and-scale" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blurred"></feGaussianBlur>
+        <feColorMatrix type="saturate" in="blurred" values="2"></feColorMatrix>
+        <feComposite in="SourceGraphic" operator="over"></feComposite>
+      </filter>
+    </svg>
     <header>
       <nav class="primary-nav">
         <ul class="nav-list">
@@ -50,9 +64,11 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
 <style is:global>
   :root {
     --accent: 255, 147, 47;
-    --accent-light: 255, 123, 0;
-    --accent-dark: 13, 40, 76;
-    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+    --accent-dark: 255, 123, 0;
+    --accent-light: 255, 184, 118;
+    color: rgb(255, 184, 118);
+    --accent-secondary: 13, 40, 76;
+    --accent-gradient: linear-gradient(45deg, rgb(var(--accent-dark)), rgb(var(--accent-light)) 30%, white 60%);
     --dark: 4, 2, 8;
 
     --foreground: 241, 247, 255;
@@ -60,12 +76,47 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     --background-subtle: 35, 38, 45;
 
     --fs-body: 1.125rem;
+    --fs-content: 1.25rem;
     --fs-subtle: 1rem;
+
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'DM Mono', monospace;
   }
+
+  /* @font-face {
+    font-family: 'Inter';
+    src:
+      url('Inter-VariableFont_opsz,wght.ttf') format('ttf supports variations'),
+      url('Inter-VariableFont_opsz,wght.ttf') format('ttf-variations');
+    font-weight: 100 900;
+  }*/
+
+  @font-face {
+    font-family: 'Inconsolata';
+    src:
+      url('Inconsolata-VariableFont_wdth,wght.ttf') format('ttf supports variations'),
+      url('Inconsolata-VariableFont_wdth,wght.ttf') format('ttf-variations');
+    font-weight: 200 900;
+  }
+
+  /* @font-face {
+    font-family: 'Red Hat';
+    src:
+      url('RedHatDisplay-VariableFont_wght.ttf') format('ttf supports variations'),
+      url('RedHatDisplay-VariableFont_wght.ttf') format('ttf-variations');
+    font-weight: 300 900;
+  } */
+
   html {
-    font-family: system-ui, sans-serif;
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
     background: rgb(var(--background));
     color: rgb(var(--foreground));
+  }
+
+  body {
     font-size: var(--fs-body);
   }
 
@@ -74,7 +125,7 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     padding: 1rem;
     width: 800px;
     max-width: calc(100% - 2rem);
-    color: var(--foreground);
+    color: rgb(var(--foreground));
   }
 
   h1 {
@@ -83,24 +134,18 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;
+    font-weight: 800;
   }
 
+  h1,
   p {
     line-height: 1.5;
   }
 
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-    color: var(--dark);
+  .blur {
+    filter: url(#blur-and-scale);
   }
+
   .text-gradient {
     background-image: var(--accent-gradient);
     -webkit-background-clip: text;
@@ -145,12 +190,12 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     &:not(.active):hover {
       text-decoration: underline;
       text-decoration-thickness: 2px;
-      text-decoration-color: rgba(var(--accent-dark));
+      text-decoration-color: rgba(var(--accent-secondary));
     }
 
     &.active {
       color: rgb(var(--foreground));
-      background: rgb(var(--accent-dark));
+      background: rgb(var(--accent-secondary));
     }
   }
 

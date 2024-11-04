@@ -33,7 +33,7 @@ console.log(allProjects);
     </li>
     <li>
       <div class="avatar">
-        <Image src={logo} alt="logo" class="logo" />
+        <Image src={logo} alt="logo" loading="eager" class="logo" />
         <div class="status"></div>
       </div>
       Open for work
@@ -55,7 +55,8 @@ console.log(allProjects);
           href={`projects/${project.slug}`}
           title={project.data.title}
           body={project.data.description}
-          image={project.data.image}
+          image={project.data.thumbnail}
+          imageLoading="eager"
         />
       ))
     }
@@ -64,17 +65,8 @@ console.log(allProjects);
 </Layout>
 
 <style>
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(26ch, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-    padding: 0;
-  }
-
   .at-a-glance {
     display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr; */
     grid-template-columns: repeat(auto-fit, minmax(18ch, 1fr));
     gap: 2rem;
     padding: 0;
@@ -87,15 +79,7 @@ console.log(allProjects);
       border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 1rem 1.5rem;
-      background: rgb(var(--background-subtle));
-      /* background: linear-gradient(to top left, rgb(var(--background-subtle)), hsl(222, 13%, 22%)); */
-      /* box-shadow: 0.5rem 0.5rem 0 rgba(var(--accent), 0.1);
-      transition: all .2s; */
-
-      /* &:hover {
-        box-shadow: 0.25rem 0.25rem 0 rgb(var(--accent));
-        transition: all .2s;
-      } */
+      background: rgba(var(--background-subtle), 0.25);
     }
   }
 
@@ -121,7 +105,6 @@ console.log(allProjects);
     &::before {
       content: '';
       position: absolute;
-      /* inset: 0; */
       bottom: -6px;
       right: -6px;
       margin: 5px;
@@ -145,7 +128,6 @@ console.log(allProjects);
     &::after {
       content: '';
       position: absolute;
-      /* inset: 0; */
       bottom: -4px;
       right: -4px;
       margin: 5px;
@@ -158,11 +140,18 @@ console.log(allProjects);
     &::before {
       transform-origin: center;
       animation: ping 1s ease-out infinite;
-      /* background-color:transparent; */
     }
 
     &::after {
       background: rgb(0, 204, 92);
     }
+  }
+
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26ch, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0;
   }
 </style>

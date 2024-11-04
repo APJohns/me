@@ -6,9 +6,10 @@ interface Props {
   body: string;
   href: string;
   image: ImageMetadata;
+  imageLoading?: 'eager' | 'lazy';
 }
 
-const { href, title, body, image } = Astro.props;
+const { href, title, body, image, imageLoading = 'lazy' } = Astro.props;
 ---
 
 <li class="link-card">
@@ -19,7 +20,7 @@ const { href, title, body, image } = Astro.props;
         {body}
       </p>
     </div>
-    <Image src={image} alt="logo" class="thumbnail" />
+    <Image src={image} alt="logo" class="thumbnail" loading={imageLoading} />
   </a>
 </li>
 <style>
@@ -68,6 +69,9 @@ const { href, title, body, image } = Astro.props;
   p {
     font-size: 1rem;
     margin: 0;
+    margin-top: 0.25rem;
+    line-height: 1.2;
+    color: rgba(var(--foreground), 0.6);
   }
 
   .link-card:is(:hover, :focus-within) {
