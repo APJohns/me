@@ -5,9 +5,13 @@ description: Boston Scientific's design system and component library
 techStack: [React, Typescript, GraphQL, Contentful CMS, Storybook, Jest, Vite]
 thumbnail: '@/images/anatomy.jpg'
 screenshot: '@/images/screenshots/anatomy.webp'
+links:
+  [
+    [site, https://anatomydesignsystem.netlify.app],
+    [storybook, https://anatomy-storybook.netlify.app],
+    [code, https://github.com/APJohns/anatomy-react],
+  ]
 sortOrder: 3
-siteLink: https://anatomy-storybook.netlify.app
-codeLink: https://github.com/APJohns/anatomy-react
 ---
 
 As a Senior UX Frontend Developer at Boston Scientific, my primary role was developing the internal design system known as Anatomy. It was my job to determine tech stack, and set up the projects and build processes. We currently have multiple projects and npm packages that I played a primary role in building up.

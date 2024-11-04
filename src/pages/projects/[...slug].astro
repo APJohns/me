@@ -27,6 +27,9 @@ const { Content } = await entry.render();
         {entry.data.techStack.map((tech) => <li>{tech}</li>)}
       </ul>
     </div>
+    <div class="links">
+      {entry.data.links.map((link) => <a href={link[1]}>See {link[0]}</a>)}
+    </div>
     <Image src={entry.data.screenshot} alt="" class="screenshot" />
   </div>
   <div class="content">
@@ -75,6 +78,20 @@ const { Content } = await entry.render();
     margin-top: 3rem;
     width: 100%;
     height: auto;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+
+    & a {
+      color: #2f88ef;
+      font-size: var(--fs-subtle);
+      font-family: var(--font-mono);
+    }
   }
 
   .content {

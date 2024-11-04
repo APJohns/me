@@ -5,9 +5,8 @@ description: Epsilon's design system and component library
 techStack: [Angular, Typescript, Sass, Bootstrap, Gulp, npm]
 thumbnail: '@/images/epsilon.jpg'
 screenshot: '@/images/screenshots/blueprint.webp'
+links: [[site, https://epsilon-blueprint.netlify.app], [code, https://github.com/epsilon-ux/blueprint-ui]]
 sortOrder: 2
-siteLink: https://epsilon-blueprint.netlify.app
-codeLink: https://github.com/epsilon-ux/blueprint-ui
 ---
 
 The primary project I worked on at Epsilon was an Angular component library called Blueprint. Blueprint was built with UX and Accessibility at the core, meeting Web Content Accessibility Guidelines (WCAG). It improved the consistency and user experience of the Epsilon products, and cut down on development time.
