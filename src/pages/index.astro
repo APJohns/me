@@ -96,7 +96,7 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
       border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 1rem 1.5rem;
-      background: rgba(var(--background-subtle), 0.25);
+      background: rgba(var(--background-subtle), 0.5);
     }
 
     .time-li {
@@ -105,14 +105,15 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
 
     .time {
       font-family: var(--font-mono);
-      color: rgba(var(--foreground), 0.5);
+      font-size: var(--fs-subtle);
+      color: rgba(var(--foreground), 0.6);
     }
 
     .earth {
       display: block;
       width: 25%;
       height: auto;
-      transform: scale(200%) translateX(-25%);
+      transform: scale(200%) translateX(-30%);
       filter: drop-shadow(0 0 3px rgba(59, 112, 211, 0.5));
     }
   }
