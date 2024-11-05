@@ -44,16 +44,18 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
       <nav class="primary-nav">
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="/" class={`nav-link${activePath === '/' ? ' active' : ''}`}>Home</a>
+            <a href="/" class={`nav-link${activePath === '/' ? ' active' : ''}`} data-astro-prefetch>Home</a>
           </li>
           <li class="nav-item">
-            <a href="/about" class={`nav-link${activePath === '/about' ? ' active' : ''}`}>About</a>
+            <a href="/about" class={`nav-link${activePath === '/about' ? ' active' : ''}`} data-astro-prefetch>About</a>
           </li>
           <li class="nav-item">
-            <a href="/resume.pdf" class="nav-link">Resume</a>
+            <a href="/resume.pdf" class="nav-link" data-astro-prefetch>Resume</a>
           </li>
           <li class="nav-item">
-            <a href="/contact" class={`nav-link${activePath === '/contact' ? ' active' : ''}`}>Contact</a>
+            <a href="/contact" class={`nav-link${activePath === '/contact' ? ' active' : ''}`} data-astro-prefetch
+              >Contact</a
+            >
           </li>
         </ul>
       </nav>
