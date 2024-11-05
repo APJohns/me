@@ -1,5 +1,6 @@
 ---
 import Socials from '@/components/Socials.astro';
+import social from '@/images/social.png';
 
 interface Props {
   title: string;
@@ -21,6 +22,13 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
+    <meta property="og:title" content="Ash Johns Portfolio" />
+    <meta property="og:description" content="Hi! I'm Ash. Let's work together on something cool!" />
+    <meta property="og:image" content={social.src} />
+    <meta property="og:url" content="https://ashpjohns.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:site_name" content="Ash Johns" />
+    <meta name="twitter:image:alt" content="Ash Johns" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="stylesheet" href="https://use.typekit.net/akb2jka.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
