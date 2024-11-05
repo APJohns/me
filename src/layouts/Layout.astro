@@ -3,9 +3,10 @@ import Socials from '@/components/Socials.astro';
 
 interface Props {
   title: string;
+  hasFooter?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, hasFooter = true } = Astro.props;
 
 const pathname = new URL(Astro.request.url).pathname;
 let activePath = pathname;
@@ -60,9 +61,13 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     <main>
       <slot />
     </main>
-    <footer>
-      <Socials />
-    </footer>
+    {
+      hasFooter && (
+        <footer>
+          <Socials />
+        </footer>
+      )
+    }
   </body>
 </html>
 
@@ -149,6 +154,10 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
 
   a {
     color: #2f88ef;
+
+    &:hover {
+      color: rgb(var(--accent));
+    }
   }
 
   .blur {
@@ -185,6 +194,7 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     font-size: var(--fs-subtle);
 
     &:not(.active):hover {
+      color: rgb(var(--accent-secondary));
       text-decoration: underline;
       text-decoration-thickness: 2px;
       text-decoration-color: rgba(var(--accent-secondary));
@@ -196,7 +206,50 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     }
   }
 
+  .link-card {
+    list-style: none;
+    display: flex;
+    padding: 1px;
+    background-color: rgb(var(--background-subtle));
+    background-image: none;
+    background-size: 400%;
+    border-radius: 8px;
+    background-position: 100%;
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .card-link {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+    gap: 0.5rem;
+    width: 100%;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: calc(1.5rem - 1px);
+    border-radius: 8px;
+    color: var(--foreground);
+    background-color: rgb(var(--background-subtle));
+  }
+
+  .link-card:is(:hover, :focus-within) {
+    background-position: 0;
+    background-image: var(--accent-gradient);
+
+    & .card-link {
+      opacity: 0.9;
+    }
+
+    & h2 {
+      color: rgb(var(--accent-light));
+    }
+  }
+
   @media (min-width: 640px) {
+    .card-link {
+      gap: 1rem;
+    }
     .nav-list {
       gap: 0.5rem;
     }

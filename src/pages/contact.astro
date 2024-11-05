@@ -1,0 +1,65 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import github from '@/images/socials/github.svg?raw';
+import linkedin from '@/images/socials/linkedin.svg?raw';
+import threads from '@/images/socials/threads.svg?raw';
+---
+
+<Layout title="Ash Johns | Contact" hasFooter={false}>
+  <h1>Let's work <span class="text-gradient">together</span></h1>
+  <div class="card-group">
+    <div class="link-card">
+      <a href="mailto:mail@ashpjohns.com" class="card-link">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+          ></path>
+        </svg>
+        mail@ashpjohns.com
+      </a>
+    </div>
+    <div class="link-card">
+      <a href="https://github.com/APJohns" class="card-link">
+        <Fragment set:html={github} />
+        APJohns
+      </a>
+    </div>
+    <div class="link-card">
+      <a href="https://www.linkedin.com/in/ashley-p-johns" class="card-link">
+        <Fragment set:html={linkedin} />
+        ashley-p-johns
+      </a>
+    </div>
+    <div class="link-card">
+      <a href="https://www.threads.net/@ashpjohns" class="card-link">
+        <Fragment set:html={threads} />
+        @ashpjohns
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .card-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26ch, 1fr));
+    gap: 1rem;
+  }
+
+  .card-link {
+    display: flex;
+
+    svg {
+      height: 1.5rem;
+    }
+  }
+</style>
