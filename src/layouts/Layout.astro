@@ -98,26 +98,24 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
           <li class="nav-item">
             <a href="/contact" class={`nav-link${activePath === '/contact' ? ' active' : ''}`}>Contact</a>
           </li>
-          <li class="switch-li">
-            <div class="switch">
-              <input id="themeToggle" type="checkbox" />
-              <label id="themeToggleLabel" aria-label="Dark mode" for="themeToggle">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"
-                  ></path>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    fill-rule="evenodd"
-                    d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </label>
-            </div>
-          </li>
         </ul>
       </nav>
+      <div class="switch">
+        <input id="themeToggle" type="checkbox" />
+        <label id="themeToggleLabel" aria-label="Dark mode" for="themeToggle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"
+            ></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </label>
+      </div>
     </header>
     <main>
       <slot />
@@ -227,7 +225,6 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
   header {
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: center;
     justify-items: center;
     align-items: center;
   }
@@ -276,11 +273,11 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
 
   .primary-nav {
     text-align: center;
+    // grid-column: 2;
   }
 
   .nav-list {
-    display: flex;
-    align-items: stretch;
+    display: inline-flex;
     gap: 0;
     border-radius: calc(1rem + 4px);
     padding: 4px;
@@ -288,13 +285,8 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     background: rgb(var(--foreground));
   }
 
-  .nav-item {
-    display: flex;
-  }
-
   .nav-link {
-    display: flex;
-    align-items: center;
+    display: block;
     border-radius: 1rem;
     padding: 0.25rem 0.75rem;
     color: rgb(var(--background));
@@ -314,31 +306,14 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     }
   }
 
-  .switch-li {
-    align-content: center;
-    padding-left: 0.75rem;
-  }
-
   .switch {
-    position: relative;
-    height: 100%;
-
-    svg {
-      display: block;
-      height: 1rem;
-      width: auto;
-      padding: 0.5rem;
-      color: rgb(var(--foreground));
-      z-index: 10;
-    }
-
     input[type='checkbox'] {
       position: absolute;
       clip: rect(0, 0, 0, 0);
       pointer-events: none;
 
       &:checked + label::before {
-        transform: translateX(calc(100% + 0.25rem));
+        transform: translateX(100%);
       }
 
       &:focus + label {
@@ -347,24 +322,33 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     }
 
     label {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      border-radius: 20px;
+      padding: 0 2px;
+      width: 36px;
+      height: 20px;
+      color: rgb(var(--foreground));
+      background: rgb(var(--foreground));
+      border: 1px solid rgb(var(--foreground));
       cursor: pointer;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 4px;
-      height: 100%;
-      background: rgb(var(--background));
-      border-radius: calc(1rem + 4px);
+
+      svg {
+        width: 15px;
+        z-index: 100;
+      }
     }
 
     label::before {
-      position: absolute;
       content: '';
-      height: 100%;
-      border-radius: 50%;
+      position: absolute;
       left: 0;
-      aspect-ratio: 1/1;
-      background: rgb(var(--accent));
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      background: rgb(var(--background));
+      transition: 0.05s ease-out;
     }
   }
 
@@ -410,12 +394,17 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
   }
 
   @media (min-width: 640px) {
+    header {
+      grid-template-columns: 10ch 1fr 10ch;
+    }
+
+    .primary-nav {
+      grid-column: 2;
+    }
+
     .card-link {
       gap: 1rem;
     }
-  }
-
-  @media (min-width: 768px) {
     .nav-list {
       gap: 0.5rem;
     }
