@@ -16,6 +16,10 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
 ---
 
 <script>
+  const html = document.querySelector('html');
+  const themeToggle: HTMLInputElement | null = document.querySelector('#themeToggle');
+  const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
+
   function setClass(isDark: boolean) {
     if (isDark) {
       html?.classList.remove('theme-light');
@@ -26,12 +30,9 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     }
   }
 
-  const html = document.querySelector('html');
-  const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
   const session = sessionStorage.getItem('isDark');
   let isDark = session ? session === 'true' : prefersDarkTheme.matches;
-
-  const themeToggle: HTMLInputElement | null = document.querySelector('#themeToggle');
+  setClass(isDark);
   if (themeToggle) {
     themeToggle.checked = isDark;
   }
@@ -58,22 +59,6 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <script is:inline>
-      function setClass(isDark) {
-        if (isDark) {
-          html?.classList.remove('theme-light');
-          html?.classList.add('theme-dark');
-        } else {
-          html?.classList.remove('theme-dark');
-          html?.classList.add('theme-light');
-        }
-      }
-
-      const html = document.querySelector('html');
-      const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
-      const session = sessionStorage.getItem('isDark');
-      setClass(session ? session === 'true' : prefersDarkTheme.matches);
-    </script>
   </head>
   <body>
     <svg width="0" height="0">
