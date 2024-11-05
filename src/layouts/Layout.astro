@@ -224,8 +224,7 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
 
   header {
     display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
+    grid-template-columns: 10ch 1fr 10ch;
     align-items: center;
   }
 
@@ -273,7 +272,7 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
 
   .primary-nav {
     text-align: center;
-    // grid-column: 2;
+    grid-column: 2;
   }
 
   .nav-list {
@@ -394,14 +393,6 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
   }
 
   @media (min-width: 640px) {
-    header {
-      grid-template-columns: 10ch 1fr 10ch;
-    }
-
-    .primary-nav {
-      grid-column: 2;
-    }
-
     .card-link {
       gap: 1rem;
     }
