@@ -28,8 +28,8 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
 
   const html = document.querySelector('html');
   const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
-  const local = localStorage.getItem('isDark');
-  let isDark = local ? local === 'true' : prefersDarkTheme.matches;
+  const session = sessionStorage.getItem('isDark');
+  let isDark = session ? session === 'true' : prefersDarkTheme.matches;
 
   const themeToggle: HTMLInputElement | null = document.querySelector('#themeToggle');
   if (themeToggle) {
@@ -38,7 +38,7 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
 
   themeToggle?.addEventListener('click', () => {
     isDark = !isDark;
-    localStorage.setItem('isDark', String(isDark));
+    sessionStorage.setItem('isDark', String(isDark));
     setClass(isDark);
   });
 </script>
@@ -71,8 +71,8 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
 
       const html = document.querySelector('html');
       const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
-      const local = localStorage.getItem('isDark');
-      setClass(local ? local === 'true' : prefersDarkTheme.matches);
+      const session = sessionStorage.getItem('isDark');
+      setClass(session ? session === 'true' : prefersDarkTheme.matches);
     </script>
   </head>
   <body>
@@ -154,7 +154,7 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
 
     --foreground: 19, 21, 26;
     --background: 244, 244, 244;
-    --background-subtle: 230, 230, 230;
+    --background-subtle: 200, 200, 200;
   }
 
   :root {
@@ -165,6 +165,12 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     --font-body: 'Inter', sans-serif;
     --font-mono: 'DM Mono', monospace;
   }
+
+  /* @media (prefers-color-scheme: dark) {
+    html {
+      color-scheme: dark;
+    }
+  } */
 
   html {
     @include theme-light();
@@ -387,8 +393,7 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     }
 
     & h2 {
-      // color: rgb(var(--accent));
-      color: rgb(var(--foreground));
+      color: rgb(var(--accent-light));
     }
   }
 
