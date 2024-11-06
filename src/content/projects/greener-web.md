@@ -5,7 +5,7 @@ description: Web sustainability tool and dashboard
 techStack: [Next.js, Typescript, Hono, Node.js]
 thumbnail: '@/images/greener-web.png'
 screenshot: '@/images/screenshots/greener-web.webp'
-siteLink: https://greenerweb.vercel.app
+siteLink: https://greenerweb.dev
 codeLink: https://github.com/APJohns/greenerweb
 links:
   [
@@ -16,7 +16,7 @@ links:
 sortOrder: 4
 ---
 
-The internet is responsible for 2-5% of global emissions. That’s more than the aviation industry! This has spurred a web sustainability movement. Greener Web is one way that I am trying to contribute to that movement. Greener Web is a web sustainability metrics tool. In its current form, you can enter in a URL to generate a report for the estimated emissions per visit to that page. You can learn more about [how it works](https://greenerweb.vercel.app/how-it-works) on the site. I’m working on some really exciting additions to this site, so be sure to tune back here in the near future.
+The internet is responsible for 2-5% of global emissions. That’s more than the aviation industry! This has spurred a web sustainability movement. Greener Web is one way that I am trying to contribute to that movement. Greener Web is a web sustainability metrics tool. In its current form, you can enter in a URL to generate a report for the estimated emissions per visit to that page. You can learn more about [how it works](https://greenerweb.dev/how-it-works) on the site. I’m working on some really exciting additions to this site, so be sure to tune back here in the near future.
 
 ![Example of a Greener Web Report](@/images/screenshots/greener-web-report.webp)
 
