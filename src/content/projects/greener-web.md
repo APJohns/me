@@ -22,7 +22,7 @@ The internet is responsible for 2-5% of global emissions. That’s more than the
 
 The backend is an API built with Node.js and Hono, hosted on Render. Its primary endpoint takes in a URL and returns the data needed for the report. It’s a pretty straightforward REST API with auth tokens. It first validates the token and URL, then spins up a headless browser using Puppeteer. It then navigates to the URL and intercepts the responses, measuring the size of the files transferred. That value then gets fed into the Sustainability Web Model via the co2.js package. The URL is also sent to The Green Web Foundation’s green-check API to determine the green factor of the hosting server. Those values are then sent back to the user via a response.
 
-I chose Hono for a few reasons. I wanted to strengthen my Node.js skillset, and Hono seems like a great tool in that ecosystem. With a similar structure to Express.js, but faster and more performant, with better TypeScript support, some exciting modern features, and standards.
+I chose Hono for a few reasons. I wanted to strengthen my Node.js skillset, and Hono is a great tool in that ecosystem. With a similar structure to Express.js, but faster and more performant, with better TypeScript support, some exciting modern features, and standards.
 
 ### co2.js
 
