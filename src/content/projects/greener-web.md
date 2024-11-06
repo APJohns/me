@@ -26,7 +26,7 @@ The backend is an API built with Node.js and Hono, hosted on Render. Its primary
 
 ### co2.js
 
-When I first began this project, I implemented the model locally. While the basic model was fairly straightforward to implement, maintaining it would be more challenging. The model depends on global data from electrical grids and their percent of renewable resources. This led me to reach for the co2.js package, which tracks these values and uses them in their model. This would allow me to focus on the project and not worry about tracking this data myself, leaving that to a dedicated team. It was also nice to see that the values I was getting from my implementation matched exactly with what co2.js was giving me.
+When I first began this project, I implemented the model locally. While the basic model was fairly straightforward to implement, maintaining it would be more challenging. The model depends on global data from electrical grids and their percent of renewable resources. This led me to reach for the [co2.js package](https://www.thegreenwebfoundation.org/co2-js/), which tracks these values and uses them in their model. This would allow me to focus on the project and not worry about tracking this data myself, leaving that to a dedicated team. It was also nice to see that the values I was getting from my implementation matched exactly with what co2.js was giving me.
 
 ## The Frontend
 
