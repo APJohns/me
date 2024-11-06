@@ -5,11 +5,9 @@ description: Web sustainability tool and dashboard
 techStack: [Next.js, Typescript, Hono, Node.js]
 thumbnail: '@/images/greener-web.png'
 screenshot: '@/images/screenshots/greener-web.webp'
-siteLink: https://greenerweb.dev
-codeLink: https://github.com/APJohns/greenerweb
 links:
   [
-    [site, https://greenerweb.vercel.app],
+    [site, https://greenerweb.dev],
     [code, https://github.com/APJohns/greenerweb],
     [api code, https://github.com/APJohns/greenerweb-api],
   ]
