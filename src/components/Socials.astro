@@ -1,9 +1,15 @@
 ---
 import github from '@/images/socials/github.svg?raw';
 import linkedin from '@/images/socials/linkedin.svg?raw';
+
+interface Props {
+  kind?: 'bold' | 'subtle';
+}
+
+const { kind = 'bold' } = Astro.props;
 ---
 
-<ul class="socials">
+<ul class={`socials ${kind}`}>
   <li>
     <a href="mailto:mail@ashpjohns.com" class="social-icon" aria-label="email" data-astro-prefetch>
       <svg
@@ -41,6 +47,11 @@ import linkedin from '@/images/socials/linkedin.svg?raw';
     padding: 0;
     list-style: none;
 
+    &.bold .social-icon {
+      color: rgb(var(--background));
+      background: rgb(var(--foreground));
+    }
+
     .social-icon {
       display: flex;
       justify-content: center;
@@ -49,8 +60,7 @@ import linkedin from '@/images/socials/linkedin.svg?raw';
       aspect-ratio: 1 / 1;
       padding: 0.5rem;
       height: 2rem;
-      color: rgb(var(--background));
-      background: rgb(var(--foreground));
+      color: rgb(var(--foreground));
 
       &:hover {
         color: rgb(var(--foreground));

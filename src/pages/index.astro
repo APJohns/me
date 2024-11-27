@@ -5,6 +5,7 @@ import Layout from '@/layouts/Layout.astro';
 import Card from '@/components/Card.astro';
 import logo from '@/images/logo.png';
 import earth from '@/images/earth.png';
+import Socials from '@/components/Socials.astro';
 
 const allProjects = (await getCollection('projects', ({ data }) => (import.meta.env.PROD ? !data.draft : true))).sort(
   (a, b) => b.data.sortOrder - a.data.sortOrder
@@ -30,17 +31,23 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
   setInterval(updateTime, 1000);
 </script>
 
-<Layout title="Ash Johns | Portfolio">
+<Layout title="Ash Johns | Portfolio" hasFooter={false}>
   <h1>Welcome to my <span class="text-gradient">portfolio</span></h1>
+  <div class="intro">
+    <h2 class="name">Hi, I'm Ash Johns <span class="wave">👋</span></h2>
+    <div class="title">Frontend / Fullstack Developer</div>
+  </div>
   <div class="lists-grid">
     <ul class="at-a-glance">
-      <li class="role">Frontend / Fullstack Developer</li>
       <li>
         <div class="avatar">
           <Image src={logo} alt="logo" loading="eager" class="logo" />
           <div class="status"></div>
         </div>
         Open for work
+      </li>
+      <li class="socials-li">
+        <Socials kind="subtle" />
       </li>
       <li class="time-li">
         <Image src={earth} alt="" class="earth" />
@@ -67,9 +74,45 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
 </Layout>
 
 <style define:vars={{ earth: `url("${earth.src}")` }}>
+  .intro {
+    text-align: center;
+  }
+
+  .name {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 1ch;
+    margin: 0;
+  }
+
+  @keyframes wave {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(20deg);
+    }
+  }
+
+  .wave {
+    display: block;
+    cursor: default;
+
+    &:hover {
+      animation: wave 0.4s linear infinite alternate;
+    }
+  }
+
+  .title {
+    color: rgba(var(--foreground), 0.6);
+    font-family: var(--font-mono);
+  }
+
   .lists-grid {
     display: grid;
     gap: 2rem;
+    margin-top: 3rem;
   }
 
   .at-a-glance {
@@ -80,14 +123,14 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
     padding: 0;
     list-style: none;
 
-    li {
+    > li {
       display: flex;
       align-items: center;
       gap: 0.5em;
       border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.05);
       padding: 1rem 1.5rem;
-      background: rgba(var(--background-subtle), 0.25);
+      background: rgb(var(--background-subtle-25));
     }
 
     .time-li {
@@ -107,6 +150,11 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
       transform: scale(200%) translateX(-25%);
       filter: drop-shadow(0 0 3px rgba(59, 112, 211, 0.5));
     }
+  }
+
+  .socials-li {
+    display: flex;
+    justify-content: center;
   }
 
   .icon {
