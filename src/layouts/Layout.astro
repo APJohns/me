@@ -199,6 +199,21 @@ if (pathname.length > 1 && pathname.at(-1) === '/') {
     }
   }
 
+  @media (prefers-reduced-motion) {
+    .stars-sm,
+    .stars-lg {
+      svg {
+        path {
+          opacity: 0.25;
+        }
+
+        .highlight path {
+          opacity: 0.25;
+        }
+      }
+    }
+  }
+
   .stars-lg {
     display: none;
   }
