@@ -32,9 +32,8 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
 </script>
 
 <Layout title="Ash Johns | Portfolio" hasFooter={false}>
-  <h1>Welcome to my <span class="text-gradient">portfolio</span></h1>
   <div class="intro">
-    <h2 class="name">Hi, I'm Ash Johns <span class="wave">👋</span></h2>
+    <h1 class="name">Hi, I'm <span class="text-gradient">Ash Johns</span></h1>
     <div class="title">Frontend / Fullstack Developer</div>
   </div>
   <div class="lists-grid">
@@ -79,40 +78,20 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
   }
 
   .name {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 1ch;
-    margin: 0;
-  }
-
-  @keyframes wave {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(20deg);
-    }
-  }
-
-  .wave {
-    display: block;
-    cursor: default;
-
-    &:hover {
-      animation: wave 0.4s linear infinite alternate;
-    }
+    margin-bottom: 0;
   }
 
   .title {
+    margin-top: 1rem;
     color: rgba(var(--foreground), 0.6);
+    font-size: var(--fs-content);
     font-family: var(--font-mono);
   }
 
   .lists-grid {
     display: grid;
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 4rem;
   }
 
   .at-a-glance {
