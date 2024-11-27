@@ -2,13 +2,12 @@
 import Layout from '@/layouts/Layout.astro';
 import github from '@/images/socials/github.svg?raw';
 import linkedin from '@/images/socials/linkedin.svg?raw';
-import threads from '@/images/socials/threads.svg?raw';
 ---
 
 <Layout title="Ash Johns | Contact" hasFooter={false}>
   <h1>Let's work <span class="text-gradient">together</span></h1>
   <div class="card-group">
-    <div class="link-card">
+    <div class="link-card fill-cols">
       <a href="mailto:mail@ashpjohns.com" class="card-link" data-astro-prefetch>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -39,19 +38,14 @@ import threads from '@/images/socials/threads.svg?raw';
         ashley-p-johns
       </a>
     </div>
-    <div class="link-card">
-      <a href="https://www.threads.net/@ashpjohns" class="card-link">
-        <Fragment set:html={threads} />
-        @ashpjohns
-      </a>
-    </div>
   </div>
 </Layout>
 
 <style>
   .card-group {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(26ch, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(26ch, 1fr)); */
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
@@ -60,6 +54,12 @@ import threads from '@/images/socials/threads.svg?raw';
 
     svg {
       height: 1.5rem;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .card-group {
+      grid-template-columns: 1fr 1fr;
     }
   }
 </style>

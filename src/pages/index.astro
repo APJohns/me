@@ -33,7 +33,7 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
 <Layout title="Ash Johns | Portfolio">
   <h1>Welcome to my <span class="text-gradient">portfolio</span></h1>
   <ul class="at-a-glance">
-    <li>
+    <li class="role">
       <!-- <svg
         class="icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,8 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
 <style define:vars={{ earth: `url("${earth.src}")` }}>
   .at-a-glance {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18ch, 1fr));
+    grid-template-columns: 1fr;
+    /* grid-template-columns: repeat(auto-fit, minmax(18ch, 1fr)); */
     gap: 2rem;
     padding: 0;
     list-style: none;
@@ -188,5 +189,28 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
     gap: 2rem;
     margin-top: 2rem;
     padding: 0;
+  }
+
+  @media (min-width: 640px) {
+    .at-a-glance {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto auto;
+    }
+
+    .time-li {
+      grid-column: 2;
+      grid-row: 1/-1;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .at-a-glance {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .time-li {
+      grid-column: auto;
+      grid-row: auto;
+    }
   }
 </style>
