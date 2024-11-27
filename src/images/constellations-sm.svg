@@ -1,0 +1,117 @@
+<svg preserveAspectRatio="xMidYMid slice" viewBox="0 0 821 810" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ConstellationsSmall" class="constellations" clip-path="url(#clip0_17_2)">
+<g id="orion">
+<g id="lines">
+<path id="Vector 1" d="M382.5 528.5L417.5 569.5L437.5 578.5L500.5 575.5L535.5 565.5M535.5 565.5L665.5 567.5L756 629L777.5 512.5L655.5 532.5L581 482L528.5 496.5L535.5 565.5Z" stroke="#81A6C8"></path>
+<path id="Vector 2" d="M391.5 503.5L437.5 563.5L500.5 575.5" stroke="#81A6C8"></path>
+<path id="Vector 3" d="M563.5 378.5L581.5 369.5L606 373L621.5 381.5L659.5 399.5L664.5 418.5" stroke="#81A6C8"></path>
+<path id="Vector 4" d="M655.5 532.5L662 550L665.5 567.5" stroke="#81A6C8"></path>
+<path id="Line 7" d="M581 482L606 373" stroke="#81A6C8"></path>
+</g>
+<g id="stars">
+<circle id="Ellipse 8" cx="382.5" cy="528.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 10" cx="417.5" cy="569.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 11" cx="437.5" cy="578.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 12" cx="437.5" cy="563.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 13" cx="500.5" cy="575.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 15" cx="528.5" cy="496.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 16" cx="581" cy="482" r="2" fill="white"></circle>
+<circle id="Ellipse 17" cx="606" cy="373" r="1" fill="white"></circle>
+<circle id="Ellipse 18" cx="581.5" cy="369.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 19" cx="563.5" cy="378.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 20" cx="621.5" cy="381.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 21" cx="659.5" cy="399.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 22" cx="664.5" cy="418.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 14" cx="535.5" cy="565.5" r="3.5" fill="white"></circle>
+<circle id="Ellipse 23" cx="662" cy="550" r="2" fill="white"></circle>
+<circle id="Ellipse 26" cx="777.5" cy="512.5" r="3.5" fill="white"></circle>
+<circle id="Ellipse 24" cx="655.5" cy="532.5" r="1.5" fill="white"></circle>
+<circle id="Ellipse 25" cx="665.5" cy="567.5" r="1.5" fill="white"></circle>
+<circle id="Ellipse 27" cx="756" cy="629" r="1" fill="white"></circle>
+<circle id="Ellipse 9" cx="391.5" cy="503.5" r="0.5" fill="white"></circle>
+</g>
+</g>
+<g id="taurus">
+<g id="lines_2">
+<path id="Vector 5" d="M327 401L420.5 306.5L472 278L487.5 271.5L494 265L519 260L511 285L499.5 304.5L399 457" stroke="#81A6C8"></path>
+<path id="Vector 6" d="M519 260L566.5 207.5L622 96" stroke="#81A6C8"></path>
+<path id="Line 8" d="M494 265L426 160" stroke="#81A6C8"></path>
+<path id="Line 9" d="M472 278L499.5 304.5" stroke="#81A6C8"></path>
+</g>
+<g id="stars_2">
+<circle id="Ellipse 28" cx="399" cy="458" r="1" fill="white"></circle>
+<circle id="Ellipse 29" cx="499.5" cy="305.5" r="3.5" fill="white"></circle>
+<circle id="Ellipse 30" cx="511" cy="286" r="1" fill="white"></circle>
+<circle id="Ellipse 31" cx="472" cy="279" r="1" fill="white"></circle>
+<circle id="Ellipse 35" cx="487.5" cy="272.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 36" cx="519" cy="261" r="1" fill="white"></circle>
+<circle id="Ellipse 37" cx="566.5" cy="208.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 38" cx="622" cy="97" r="1" fill="white"></circle>
+<circle id="Ellipse 32" cx="494" cy="266" r="1" fill="white"></circle>
+<circle id="Ellipse 33" cx="0.5" cy="0.5" r="0.5" transform="matrix(1 0 0 -1 420 308)" fill="white"></circle>
+<circle id="Ellipse 34" cx="2" cy="2" r="2" transform="matrix(1 0 0 -1 325 404)" fill="white"></circle>
+<g id="Pleiades">
+<circle id="Ellipse 39" cx="426" cy="161" r="1" fill="white"></circle>
+<circle id="Ellipse 44" cx="421.5" cy="150.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 43" cx="426" cy="150" r="1" fill="white"></circle>
+<circle id="Ellipse 42" cx="423" cy="152" r="1" fill="white"></circle>
+<circle id="Ellipse 41" cx="428" cy="154" r="1" fill="white"></circle>
+<circle id="Ellipse 40" cx="425.5" cy="156.5" r="1.5" fill="white"></circle>
+</g>
+</g>
+</g>
+<g id="gemini">
+<g id="lines_3">
+<path id="Vector 13" d="M197.5 734.5L189.5 698.5L196.5 671.5L195.5 624.5L184.5 564.5" stroke="#81A6C8"></path>
+<path id="Vector 14" d="M163 709L189.5 698.5L260.5 699.5" stroke="#81A6C8"></path>
+<path id="Vector 15" d="M407 673L317.5 731.5L260.5 699.5L299.5 671.5L380.5 633.5" stroke="#81A6C8"></path>
+<path id="Vector 16" d="M145.5 659.5L195.5 624.5L282 598" stroke="#81A6C8"></path>
+<path id="Vector 17" d="M351.5 590.5L282 598L336 563L345 544L349.5 514.5" stroke="#81A6C8"></path>
+</g>
+<g id="stars_3">
+<circle id="Ellipse 63" cx="163" cy="709" r="2" fill="white"></circle>
+<circle id="Ellipse 64" cx="189.5" cy="698.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 77" cx="260.5" cy="699.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 78" cx="317.5" cy="731.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 79" cx="407" cy="673" r="1" fill="white"></circle>
+<circle id="Ellipse 75" cx="299.5" cy="671.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 76" cx="380.5" cy="633.5" r="1.5" fill="white"></circle>
+<circle id="Ellipse 66" cx="196.5" cy="671.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 67" cx="195.5" cy="624.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 70" cx="282" cy="598" r="1" fill="white"></circle>
+<circle id="Ellipse 71" cx="351.5" cy="590.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 72" cx="336" cy="563" r="1" fill="white"></circle>
+<circle id="Ellipse 73" cx="345" cy="544" r="1" fill="white"></circle>
+<circle id="Ellipse 74" cx="349.5" cy="514.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 69" cx="184.5" cy="564.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 68" cx="145.5" cy="659.5" r="1.5" fill="white"></circle>
+<circle id="Ellipse 65" cx="197.5" cy="734.5" r="0.5" fill="white"></circle>
+</g>
+</g>
+<g id="perseus">
+<g id="lines_4">
+<path id="Vector 18" d="M245.5 19.5L245 54L221 64L121 110L147 143L237 174L285.5 178.5L332 169L327.5 143.5" stroke="#81A6C8"></path>
+<path id="Vector 19" d="M40.5 64.5L73 81L121 110" stroke="#81A6C8"></path>
+</g>
+<g id="stars_4">
+<circle id="Ellipse 80" cx="40.5" cy="64.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 81" cx="73" cy="81" r="1" fill="white"></circle>
+<circle id="Ellipse 82" cx="121" cy="110" r="2" fill="white"></circle>
+<circle id="Ellipse 88" cx="221" cy="64" r="2" fill="white"></circle>
+<circle id="Ellipse 89" cx="221" cy="64" r="2" fill="white"></circle>
+<circle id="Ellipse 90" cx="245" cy="54" r="1" fill="white"></circle>
+<circle id="Ellipse 91" cx="245.5" cy="19.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 83" cx="147" cy="143" r="1" fill="white"></circle>
+<circle id="Ellipse 84" cx="237" cy="174" r="1" fill="white"></circle>
+<circle id="Ellipse 85" cx="285.5" cy="178.5" r="0.5" fill="white"></circle>
+<circle id="Ellipse 86" cx="332" cy="169" r="1" fill="white"></circle>
+<circle id="Ellipse 87" cx="327.5" cy="143.5" r="0.5" fill="white"></circle>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_17_2">
+<rect width="821" height="810" fill="white"></rect>
+</clipPath>
+</defs>
+</svg>
