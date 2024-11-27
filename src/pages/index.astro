@@ -5,9 +5,6 @@ import Layout from '@/layouts/Layout.astro';
 import Card from '@/components/Card.astro';
 import logo from '@/images/logo.png';
 import earth from '@/images/earth.png';
-import Socials from '@/components/Socials.astro';
-import github from '@/images/socials/github.svg?raw';
-import linkedin from '@/images/socials/linkedin.svg?raw';
 
 const allProjects = (await getCollection('projects', ({ data }) => (import.meta.env.PROD ? !data.draft : true))).sort(
   (a, b) => b.data.sortOrder - a.data.sortOrder
