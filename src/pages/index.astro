@@ -5,6 +5,9 @@ import Layout from '@/layouts/Layout.astro';
 import Card from '@/components/Card.astro';
 import logo from '@/images/logo.png';
 import earth from '@/images/earth.png';
+import Socials from '@/components/Socials.astro';
+import github from '@/images/socials/github.svg?raw';
+import linkedin from '@/images/socials/linkedin.svg?raw';
 
 const allProjects = (await getCollection('projects', ({ data }) => (import.meta.env.PROD ? !data.draft : true))).sort(
   (a, b) => b.data.sortOrder - a.data.sortOrder
@@ -32,61 +35,51 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
 
 <Layout title="Ash Johns | Portfolio">
   <h1>Welcome to my <span class="text-gradient">portfolio</span></h1>
-  <ul class="at-a-glance">
-    <li class="role">
-      <!-- <svg
-        class="icon"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="size-6"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"
-        ></path>
-      </svg> -->
-      Frontend / Fullstack Developer
-    </li>
-    <li>
-      <div class="avatar">
-        <Image src={logo} alt="logo" loading="eager" class="logo" />
-        <div class="status"></div>
-      </div>
-      Open for work
-    </li>
-    <li class="time-li">
-      <Image src={earth} alt="" class="earth" />
-      <div class="time-card">
-        <div id="time" class="time"></div>
-        Boston, MA
-      </div>
-    </li>
-  </ul>
-  <ul role="list" class="link-card-grid">
-    {
-      allProjects.map((project) => (
-        <Card
-          href={`projects/${project.slug}`}
-          title={project.data.title}
-          body={project.data.description}
-          image={project.data.thumbnail}
-          imageLoading="eager"
-        />
-      ))
-    }
-  </ul>
+  <div class="lists-grid">
+    <ul class="at-a-glance">
+      <li class="role">Frontend / Fullstack Developer</li>
+      <li>
+        <div class="avatar">
+          <Image src={logo} alt="logo" loading="eager" class="logo" />
+          <div class="status"></div>
+        </div>
+        Open for work
+      </li>
+      <li class="time-li">
+        <Image src={earth} alt="" class="earth" />
+        <div class="time-card">
+          <div id="time" class="time"></div>
+          Boston, MA
+        </div>
+      </li>
+    </ul>
+    <ul class="link-card-grid">
+      {
+        allProjects.map((project) => (
+          <Card
+            href={`projects/${project.slug}`}
+            title={project.data.title}
+            body={project.data.description}
+            image={project.data.thumbnail}
+            imageLoading="eager"
+          />
+        ))
+      }
+    </ul>
+  </div>
 </Layout>
 
 <style define:vars={{ earth: `url("${earth.src}")` }}>
+  .lists-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
   .at-a-glance {
     display: grid;
     grid-template-columns: 1fr;
-    /* grid-template-columns: repeat(auto-fit, minmax(18ch, 1fr)); */
     gap: 2rem;
+    margin: 0;
     padding: 0;
     list-style: none;
 
@@ -95,7 +88,7 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
       align-items: center;
       gap: 0.5em;
       border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       padding: 1rem 1.5rem;
       background: rgba(var(--background-subtle), 0.25);
     }
@@ -187,7 +180,7 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(26ch, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
+    margin: 0;
     padding: 0;
   }
 
@@ -195,6 +188,7 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
     .at-a-glance {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto auto;
+      gap: 1rem 2rem;
     }
 
     .time-li {
@@ -206,6 +200,7 @@ const allProjects = (await getCollection('projects', ({ data }) => (import.meta.
   @media (min-width: 768px) {
     .at-a-glance {
       grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
     }
 
     .time-li {

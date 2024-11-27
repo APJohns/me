@@ -5,10 +5,30 @@ import linkedin from '@/images/socials/linkedin.svg?raw';
 
 <ul class="socials">
   <li>
-    <a href="https://github.com/APJohns" aria-label="GitHub"><Fragment set:html={github} /></a>
+    <a href="mailto:mail@ashpjohns.com" class="social-icon" aria-label="email" data-astro-prefetch>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        class="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+        ></path>
+      </svg>
+    </a>
   </li>
   <li>
-    <a href="https://www.linkedin.com/in/ashley-p-johns" aria-label="LinkedIn"><Fragment set:html={linkedin} /></a>
+    <a href="https://github.com/APJohns" class="social-icon" aria-label="GitHub"><Fragment set:html={github} /></a>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com/in/ashley-p-johns" class="social-icon" aria-label="LinkedIn"
+      ><Fragment set:html={linkedin} /></a
+    >
   </li>
 </ul>
 
@@ -17,20 +37,29 @@ import linkedin from '@/images/socials/linkedin.svg?raw';
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 2rem;
+    margin: 0;
     padding: 0;
     list-style: none;
 
-    a {
-      color: rgb(var(--foreground));
+    .social-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      aspect-ratio: 1 / 1;
+      padding: 0.5rem;
+      height: 2rem;
+      color: rgb(var(--background));
+      background: rgb(var(--foreground));
 
       &:hover {
-        color: rgb(var(--accent));
+        color: rgb(var(--foreground));
+        background: rgb(var(--accent));
       }
     }
 
     svg {
-      height: 2.5rem;
+      display: block;
     }
   }
 </style>
