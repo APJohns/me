@@ -47,7 +47,7 @@ const { kind = 'bold' } = Astro.props;
     padding: 0;
     list-style: none;
 
-    &.bold .social-icon {
+    &.bold .social-icon:not(:hover) {
       color: rgb(var(--background));
       background: rgb(var(--foreground));
     }
