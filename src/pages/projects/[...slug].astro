@@ -28,7 +28,13 @@ const { Content } = await entry.render();
       </ul>
     </div>
     <div class="links">
-      {entry.data.links.map((link) => <a href={link[1]}>See {link[0]}</a>)}
+      {
+        entry.data.links.map((link) => (
+          <a href={link[1]} target="_blank">
+            See {link[0]}
+          </a>
+        ))
+      }
     </div>
     <Image src={entry.data.screenshot} alt="" class="screenshot" />
   </div>
