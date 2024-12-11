@@ -2,7 +2,7 @@
 title: Greener Web
 company: Side Project
 description: Web sustainability tool and dashboard
-techStack: [Next.js, Typescript, Hono, Node.js]
+techStack: [Next.js, Typescript, Hono, Node.js, Supabase]
 thumbnail: '@/images/greener-web.png'
 screenshot: '@/images/screenshots/greener-web.webp'
 links:
