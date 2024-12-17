@@ -8,13 +8,13 @@ screenshot: '@/images/screenshots/greener-web.webp'
 links:
   [
     [site, https://www.wickedgreenweb.dev],
-    [code, https://github.com/APJohns/greenerweb],
-    [api code, https://github.com/APJohns/greenerweb-api],
+    [code, https://github.com/APJohns/wickedgreenweb],
+    [api code, https://github.com/APJohns/wickedgreenweb-api],
   ]
 sortOrder: 4
 ---
 
-The internet is responsible for 2-5% of global emissions. That’s more than the aviation industry! This has spurred a web sustainability movement. Wicked Green Web is one way that I am trying to contribute to that movement. Wicked Green Web is a web sustainability metrics tool. In its current form, you can enter in a URL to generate a report for the estimated emissions per visit to that page. You can learn more about [how it works](https://greenerweb.dev/how-it-works) on the site. I’m working on some really exciting additions to this site, so be sure to tune back here in the near future.
+The internet is responsible for 2-5% of global emissions. That’s more than the aviation industry! This has spurred a web sustainability movement. Wicked Green Web is one way that I am trying to contribute to that movement. Wicked Green Web is a web sustainability metrics tool. In its current form, you can enter in a URL to generate a report for the estimated emissions per visit to that page. You can learn more about [how it works](https://www.wickedgreenweb.dev/how-it-works) on the site. I’m working on some really exciting additions to this site, so be sure to tune back here in the near future.
 
 ![Example of a Wicked Green Web Report](@/images/screenshots/greener-web-report.webp)
 
