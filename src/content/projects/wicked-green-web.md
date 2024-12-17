@@ -9,7 +9,7 @@ links:
   [
     [site, https://www.wickedgreenweb.dev],
     [code, https://github.com/APJohns/wickedgreenweb],
-    [api code, https://github.com/APJohns/wickedgreenweb-api],
+    [api code, https://github.com/APJohns/wickedgreenapi],
   ]
 sortOrder: 4
 ---
