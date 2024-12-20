@@ -17,7 +17,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={`Ash Johns | ${entry.data.title}`}>
+<Layout title={`${entry.data.title} | Ash Johns`}>
   <div class="header">
     <h1 class="title text-gradient">{entry.data.title}</h1>
     <p class="company">{entry.data.company}</p>
