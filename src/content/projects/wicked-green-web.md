@@ -14,11 +14,11 @@ links:
 sortOrder: 4
 ---
 
-The internet is responsible for 2-5% of global emissions. That’s more than the aviation industry! This has spurred a web sustainability movement. Wicked Green Web is one way that I am trying to contribute to that movement. Wicked Green Web is a web sustainability metrics tool. It allows you to track the estimated emissions of the pages in your sites over time. You can learn more about [how it works](https://www.wickedgreenweb.dev/how-it-works) on the site.
+The internet is responsible for 2-5% of global emissions. That's more than the aviation industry! This has spurred a web sustainability movement. Wicked Green Web is one way that I am trying to contribute to that movement. Wicked Green Web is a web sustainability metrics tool. It allows you to track the estimated emissions of the pages in your sites over time. You can learn more about [how it works](https://www.wickedgreenweb.dev/how-it-works) on the site.
 
 ## The Backend
 
-The backend is an API built with Node.js and Hono, hosted on Render. Its primary endpoint takes in a URL and returns the data needed for the report. It’s a pretty straightforward REST API with auth tokens. It first validates the token and URL, then spins up a headless browser using Puppeteer. It then navigates to the URL and intercepts the responses, measuring the size of the files transferred. That value then gets fed into the Sustainability Web Model via the co2.js package. The URL is also sent to The Green Web Foundation’s green-check API to determine the green factor of the hosting server. Those values are then sent back to the user via a response.
+The backend is an API built with Node.js and Hono, hosted on Render. Its primary endpoint takes in a URL and returns the data needed for the report. It's a pretty straightforward REST API with auth tokens. It first validates the token and URL, then spins up a headless browser using Puppeteer. It then navigates to the URL and intercepts the responses, measuring the size of the files transferred. That value then gets fed into the Sustainability Web Model via the co2.js package. The URL is also sent to The Green Web Foundation's green-check API to determine the green factor of the hosting server. Those values are then sent back to the user via a response.
 
 I chose Hono for a few reasons. I wanted to strengthen my Node.js skillset, and Hono is a great tool in that ecosystem. With a similar structure to Express.js, but faster and more performant, with better TypeScript support, some exciting modern features, and standards.
 
@@ -40,4 +40,4 @@ Theres also a reports page thats gives you access to your reports data through a
 
 ![Example of a Wicked Green Web Report](@/images/screenshots/wicked-reports.png)
 
-I have loved working with Next.js in the past, making the decision to use it for this project an easy one. The developer experience is fantastic, with so many great features like SSR which allowed me to make an API call without revealing the auth token. It’s also quickly taking over as one of the dominant React meta-frameworks, making it a strong tool to add to my belt.
+I have loved working with Next.js in the past, making the decision to use it for this project an easy one. The developer experience is fantastic, with so many great features like SSR which allowed me to make an API call without revealing the auth token. It's also quickly taking over as one of the dominant React meta-frameworks, making it a strong tool to add to my belt.
