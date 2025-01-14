@@ -2,9 +2,9 @@
 title: Wicked Green Web
 company: Side Project
 description: Web sustainability tool and dashboard
-techStack: [Next.js, Typescript, Hono, Node.js, Supabase]
-thumbnail: '@/images/greener-web.png'
-screenshot: '@/images/screenshots/greener-web.webp'
+techStack: [Next.js, Typescript, Hono, Node.js, Supabase, D3, Puppeteer, Figma]
+thumbnail: '@/images/wickedgreenweb.png'
+screenshot: '@/images/screenshots/wicked-home.webp'
 links:
   [
     [site, https://www.wickedgreenweb.dev],
@@ -14,9 +14,7 @@ links:
 sortOrder: 4
 ---
 
-The internet is responsible for 2-5% of global emissions. That’s more than the aviation industry! This has spurred a web sustainability movement. Wicked Green Web is one way that I am trying to contribute to that movement. Wicked Green Web is a web sustainability metrics tool. In its current form, you can enter in a URL to generate a report for the estimated emissions per visit to that page. You can learn more about [how it works](https://www.wickedgreenweb.dev/how-it-works) on the site. I’m working on some really exciting additions to this site, so be sure to tune back here in the near future.
-
-![Example of a Wicked Green Web Report](@/images/screenshots/greener-web-report.webp)
+The internet is responsible for 2-5% of global emissions. That’s more than the aviation industry! This has spurred a web sustainability movement. Wicked Green Web is one way that I am trying to contribute to that movement. Wicked Green Web is a web sustainability metrics tool. It allows you to track the estimated emissions of the pages in your sites over time. You can learn more about [how it works](https://www.wickedgreenweb.dev/how-it-works) on the site.
 
 ## The Backend
 
@@ -30,6 +28,16 @@ When I first began this project, I implemented the model locally. While the basi
 
 ## The Frontend
 
-The frontend is a Next.js application using the app router and utilizes server-side rendering (SSR) hosted on Vercel. The landing page is Google-esque input with URL validation. There’s also a link to explain how the report is generated. On entry of the URL, the app router loading state is triggered while an API request is made to the backend. Once that data comes back, the report is shown. The frontend is pretty simple in this first phase of the project. There’s a lot more to come that I’m excited to share when it’s ready!
+The frontend is a Next.js application using the app router and utilizes server-side rendering (SSR) hosted on Vercel. The landing page is Google-esque input with URL validation. There’s also a link to explain how the report is generated. On entry of the URL, the app router loading state is triggered while an API request is made to the backend. Once that data comes back, the report is shown.
+
+![Example of a Wicked Green Web Report](@/images/screenshots/wicked-report.webp)
+
+If you create an account, you then have access to the primary part of the site, the dashboard. The dashboard allows you to create projects and add URLs you want to track. A report will be run on those URLs via a cron job on the backend. The frequency of those reports is customizable from daily to monthly or manually. Some helpful stats are shown on the overview page, including averages and a D3 chart to visualize sustainability over time of your project.
+
+![Example of a Wicked Green Web Report](@/images/screenshots/wicked-overview.png)
+
+Theres also a reports page thats gives you access to your reports data through a table.
+
+![Example of a Wicked Green Web Report](@/images/screenshots/wicked-reports.png)
 
 I have loved working with Next.js in the past, making the decision to use it for this project an easy one. The developer experience is fantastic, with so many great features like SSR which allowed me to make an API call without revealing the auth token. It’s also quickly taking over as one of the dominant React meta-frameworks, making it a strong tool to add to my belt.
