@@ -34,10 +34,10 @@ The frontend is a Next.js application using the app router and utilizes server-s
 
 If you create an account, you then have access to the primary part of the site, the dashboard. The dashboard allows you to create projects and add URLs you want to track. A report will be run on those URLs via a cron job on the backend. The frequency of those reports is customizable from daily to monthly or manually. Some helpful stats are shown on the overview page, including averages and a D3 chart to visualize sustainability over time of your project.
 
-![Example of a Wicked Green Web Report](@/images/screenshots/wicked-overview.png)
+![A dashboard showing project averages for sustainability metrics and a chart showing grams of carbon over time](@/images/screenshots/wicked-overview.png)
 
 Theres also a reports page thats gives you access to your reports data through a table.
 
-![Example of a Wicked Green Web Report](@/images/screenshots/wicked-reports.png)
+![A table showing the most recent report batch with a date selector allowing you to see older reports](@/images/screenshots/wicked-reports.png)
 
 I have loved working with Next.js in the past, making the decision to use it for this project an easy one. The developer experience is fantastic, with so many great features like SSR which allowed me to make an API call without revealing the auth token. It's also quickly taking over as one of the dominant React meta-frameworks, making it a strong tool to add to my belt.
