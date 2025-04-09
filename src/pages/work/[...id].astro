@@ -6,7 +6,7 @@ import '@/styles/details-page.css';
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-  const projectEntries = await getCollection('projects', ({ data }) => (import.meta.env.PROD ? !data.draft : true));
+  const projectEntries = await getCollection('work', ({ data }) => (import.meta.env.PROD ? !data.draft : true));
   return projectEntries.map((entry) => ({
     params: { id: entry.id },
     props: { entry },

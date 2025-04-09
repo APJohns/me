@@ -1,0 +1,78 @@
+.header {
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 0;
+}
+
+.company {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.tech-stack {
+  margin-top: 3rem;
+  font-size: var(--fs-subtle);
+  font-family: var(--font-mono);
+}
+
+.tech-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+  margin-top: 0.5rem;
+  padding: 0;
+  list-style: none;
+
+  & li {
+    border-radius: 8px;
+    padding: 0.125rem 0.5rem;
+    background: rgb(var(--background-subtle));
+  }
+}
+
+.screenshot {
+  margin-top: 3rem;
+  width: 100%;
+  height: auto;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+
+  & a {
+    font-size: var(--fs-subtle);
+    font-family: var(--font-mono);
+  }
+}
+
+.content {
+  margin-top: 3rem;
+  font-size: var(--fs-content);
+  line-height: 1.5;
+
+  img {
+    margin-top: 1rem;
+    width: 100%;
+    height: auto;
+  }
+
+  h2 {
+    margin: 4rem 0 0;
+  }
+
+  h3 {
+    margin: 3rem 0 0;
+  }
+
+  p {
+    margin: 1rem 0 0;
+  }
+}
