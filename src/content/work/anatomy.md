@@ -2,7 +2,7 @@
 title: Anatomy
 company: Boston Scientific
 description: Boston Scientific's design system and component library
-techStack: [React, Typescript, GraphQL, Contentful CMS, Storybook, Jest, React Testing Library, Vite]
+techStack: [React, TypeScript, GraphQL, Contentful CMS, Storybook, Jest, React Testing Library, Vite]
 thumbnail: '@/images/anatomy.jpg'
 screenshot: '@/images/screenshots/anatomy.webp'
 links:

@@ -2,7 +2,7 @@
 title: Wicked Green Web
 company: Side Project
 description: Web sustainability tool and dashboard
-techStack: [Next.js, Typescript, Hono, Node.js, Supabase, D3, Puppeteer, Figma]
+techStack: [Next.js, TypeScript, Hono, Node.js, Supabase, D3, Puppeteer, Figma]
 thumbnail: '@/images/wickedgreenweb.png'
 screenshot: '@/images/screenshots/wicked-home.webp'
 links:

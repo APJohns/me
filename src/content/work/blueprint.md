@@ -2,7 +2,7 @@
 title: Blueprint
 company: Epsilon
 description: Epsilon's design system and component library
-techStack: [Angular, Typescript, Sass, Bootstrap, Gulp, npm]
+techStack: [Angular, TypeScript, Sass, Bootstrap, Gulp, npm]
 thumbnail: '@/images/epsilon.jpg'
 screenshot: '@/images/screenshots/blueprint.webp'
 links: [[site, https://epsilon-blueprint.netlify.app], [code, https://github.com/epsilon-ux/blueprint-ui]]

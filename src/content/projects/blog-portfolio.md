@@ -1,7 +1,7 @@
 ---
 title: Blog & Portfolio
 description: Place to share my ideas and projects
-techStack: [Astro, Typescript]
+techStack: [Astro, TypeScript]
 thumbnail: '@/images/logo.png'
 screenshot: '@/images/screenshots/blog.webp'
 links:

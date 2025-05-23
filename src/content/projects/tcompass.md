@@ -1,7 +1,7 @@
 ---
 title: TCompass
 description: Find MBTA stops near you using this compass native app
-techStack: [React Native, Expo, Typescript]
+techStack: [React Native, Expo, TypeScript]
 thumbnail: '@/images/tcompass.png'
 screenshot: '@/images/screenshots/tcompass-screens.png'
 links: [[code, https://github.com/APJohns/TCompass]]
