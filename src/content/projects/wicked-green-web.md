@@ -11,7 +11,7 @@ links:
     [code, https://github.com/APJohns/wickedgreenweb],
     [api code, https://github.com/APJohns/wickedgreenapi],
   ]
-sortOrder: 4
+sortOrder: 2
 ---
 
 The internet is responsible for 2-5% of global emissions. That's more than the aviation industry! This has spurred a web sustainability movement. Wicked Green Web is one way that I am trying to contribute to that movement. Wicked Green Web is a web sustainability metrics tool. It allows you to track the estimated emissions of the pages in your sites over time. You can learn more about [how it works](https://www.wickedgreenweb.dev/how-it-works) on the site.
