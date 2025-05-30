@@ -42,22 +42,44 @@ const allWorks = (await getCollection('work', ({ data }) => (import.meta.env.PRO
   </div>
   <div class="lists-grid">
     <ul class="at-a-glance">
-      <li>
+      <li class="glance-card">
         <div class="avatar">
           <Image src={logo} alt="logo" loading="eager" class="logo" />
           <div class="status"></div>
         </div>
         Open for work
       </li>
-      <li class="socials-li">
+      <li class="glance-card socials-li">
         <Socials kind="subtle" />
       </li>
-      <li class="time-li">
+      <li class="glance-card time-li">
         <Image src={earth} alt="" class="earth" />
         <div class="time-card">
           <div id="time" class="time"></div>
           Boston, MA
         </div>
+      </li>
+      <li class="link-card garden-card">
+        <a href="https://ashjohns.dev" target="_blank" class="card-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"
+            ><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M512 32c0 113.6-84.6 207.5-194.2 222c-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0l32 0c17.7 0 32 14.3 32 32zM0 96C0 78.3 14.3 64 32 64l32 0c123.7 0 224 100.3 224 224l0 32 0 160c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-160C100.3 320 0 219.7 0 96z"
+            ></path></svg
+          >
+          <div class="card-content">Digital Garden</div>
+        </a>
+      </li>
+      <li class="link-card resume-card">
+        <a href="resume.pdf" target="_blank" class="card-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"
+            ><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 288c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128z"
+            ></path></svg
+          >
+          <div class="card-content">Resume</div>
+        </a>
       </li>
     </ul>
     <section>
@@ -125,7 +147,7 @@ const allWorks = (await getCollection('work', ({ data }) => (import.meta.env.PRO
     padding: 0;
     list-style: none;
 
-    > li {
+    .glance-card {
       display: flex;
       align-items: center;
       gap: 0.5em;
@@ -151,6 +173,20 @@ const allWorks = (await getCollection('work', ({ data }) => (import.meta.env.PRO
       height: auto;
       transform: scale(200%) translateX(-25%);
       filter: drop-shadow(0 0 3px rgba(59, 112, 211, 0.5));
+    }
+  }
+
+  .resume-card .card-link,
+  .garden-card .card-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+
+    & svg {
+      display: block;
+      height: 1.25em;
+      aspect-ratio: 1/1;
     }
   }
 
@@ -270,6 +306,10 @@ const allWorks = (await getCollection('work', ({ data }) => (import.meta.env.PRO
       grid-row: 1/-1;
     }
 
+    .garden-card {
+      /* grid-column: span 2; */
+    }
+
     /* .section-heading {
       &::before {
         background: linear-gradient(to right, var(--background-gradient));
@@ -290,6 +330,10 @@ const allWorks = (await getCollection('work', ({ data }) => (import.meta.env.PRO
     .time-li {
       grid-column: auto;
       grid-row: auto;
+    }
+
+    .garden-card {
+      grid-column: span 2;
     }
   }
 </style>
