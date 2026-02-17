@@ -38,7 +38,7 @@ const allWorks = (await getCollection('work', ({ data }) => (import.meta.env.PRO
 <Layout title="Portfolio | Ash Johns" hasFooter={false}>
   <div class="intro">
     <h1 class="name">Hi, I'm <span class="text-gradient">Ash Johns</span></h1>
-    <div class="title">Frontend / Fullstack Developer</div>
+    <div class="title">Frontend Developer</div>
   </div>
   <div class="lists-grid">
     <ul class="at-a-glance">
@@ -47,7 +47,11 @@ const allWorks = (await getCollection('work', ({ data }) => (import.meta.env.PRO
           <Image src={logo} alt="logo" loading="eager" class="logo" />
           <div class="status"></div>
         </div>
-        Open for work
+        <!-- Open for work -->
+        <div class="working-at">
+            <span class="working-at-title">Working at</span>
+            <span>Revvity</span>
+        </div>
       </li>
       <li class="glance-card socials-li">
         <Socials kind="subtle" />
@@ -157,13 +161,23 @@ const allWorks = (await getCollection('work', ({ data }) => (import.meta.env.PRO
       background: rgb(var(--background-subtle-25));
     }
 
+    .working-at {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .working-at-title {
+        color: rgba(var(--foreground), 0.5);
+        font-size: var(--fs-small);
+    }
+
     .time-li {
       overflow: hidden;
     }
 
     .time {
       font-family: var(--font-mono);
-      font-size: var(--fs-subtle);
+      font-size: var(--fs-small);
       color: rgba(var(--foreground), 0.5);
     }
 
