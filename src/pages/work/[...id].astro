@@ -30,14 +30,16 @@ const { Content } = await render(entry);
     </div>
     <div class="links">
       {
-        entry.data.links.map((link) => (
+        entry.data.links?.map((link) => (
           <a href={link[1]} target="_blank">
             See {link[0]}
           </a>
         ))
       }
     </div>
-    <Image src={entry.data.screenshot} alt="" class="screenshot" />
+    {entry.data.screenshot && (
+      <Image src={entry.data.screenshot} alt="" class="screenshot" />
+    )}
   </div>
   <div class="content">
     <Content />

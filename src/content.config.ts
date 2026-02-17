@@ -1,20 +1,20 @@
-import { glob } from 'astro/loaders';
-import { defineCollection, z, type ImageFunction } from 'astro:content';
+import { glob } from "astro/loaders";
+import { defineCollection, z, type ImageFunction } from "astro:content";
 
 const sharedDetails = (image: ImageFunction) => ({
   title: z.string(),
   description: z.string(),
   company: z.string().optional(),
   techStack: z.array(z.string()),
-  links: z.array(z.array(z.string())),
+  links: z.array(z.array(z.string())).optional(),
   thumbnail: image(),
-  screenshot: image(),
+  screenshot: image().optional(),
   sortOrder: z.number(),
   draft: z.boolean().optional(),
 });
 
 const work = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/work' }),
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/work" }),
   schema: ({ image }) =>
     z.object({
       ...sharedDetails(image),
@@ -22,7 +22,7 @@ const work = defineCollection({
 });
 
 const projects = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/projects' }),
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/projects" }),
   schema: ({ image }) =>
     z.object({
       ...sharedDetails(image),
